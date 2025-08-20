@@ -25,4 +25,8 @@ export const updateOrderStatus = async (req, res) => {
   } else {
     res.status(404).json({ message: 'Order not found' });
   }
+
 };
+
+controllers/orderController.js
+
