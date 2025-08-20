@@ -28,5 +28,6 @@ export const updateOrderStatus = async (req, res) => {
 
 };
 
-controllers/orderController.js
+
+
 
