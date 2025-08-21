@@ -1,15 +1,14 @@
 import express from 'express';
 import {
-  placeOrder, getOrderById, getUserOrders, updateOrderStatus
+  placeOrder, getOrderById, getOrdersByUser, updateOrderStatus
 } from '../controllers/orderController.js';
 import { protect } from '../middleware/authMiddleware.js';
 
 const router = express.Router();
 
-
-router.post('/', protect, placeOrder);
-router.get('/:orderId', protect, getOrderById);
-router.get('/userOrder/:userId', protect, getUserOrders);
-router.put('/:orderId/status', protect, updateOrderStatus);
+router.post('/',  placeOrder);
+router.get('/:orderId', getOrderById);
+router.get('/user/:userId', protect, getOrdersByUser);
+router.put('/:orderId/status', updateOrderStatus);
 
 export default router;
